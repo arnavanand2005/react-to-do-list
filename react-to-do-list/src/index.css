@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(135deg, #7aaae0, #7e6bb9, #ff8c94, #4db8b8);
+  background-size: 600% 600%;
+  animation: gradientShift 25s ease infinite;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Improved Snowflakes */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  opacity: 0.75;
+  user-select: none;
+  pointer-events: none;
+  animation: snow linear infinite;
+  z-index: 0;
+}
+
+@keyframes snow {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.snowflake-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Todo Container */
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.todo-component {
+  background-color: #ffffffee;
+  padding: 50px 60px;
+  border-radius: 35px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  max-width: 650px;
+  width: 95%;
+  text-align: center;
+  border: 4px dotted #ec407a;
+  z-index: 2;
+}
+
+.input {
+  width: 80%;
+  padding: 14px;
+  border-radius: 15px;
+  border: 2px solid #f06292;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 14px;
+  border-radius: 20px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+li div {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Pacifico', cursive;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px 4px rgba(255,255,255,0.6);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button.add {
+  background-color: #43a047;
+}
+
+button.delete {
+  background-color: #e53935;
+}
+
+button.up {
+  background-color: #1e88e5;
+}
+
+button.down {
+  background-color: #8e24aa;
+}
