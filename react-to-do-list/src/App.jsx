@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TodoComponent from './TodoList';
-import Snowflakes from './Snowflakes';
+import TodoComponent from './Todolist';
+import Snowflakes from './Snowflakes.jsx';
 import './index.css';
 
 const App = () => {
